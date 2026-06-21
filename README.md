@@ -290,6 +290,6 @@ This project provided practical experience in:
 
 AWS | DevOps | Cloud Engineer
 
-GitHub: https://github.com/<your-username>
+GitHub: [https://github.com/<your-username>](https://github.com/MadhavNakra)
 
-LinkedIn: https://linkedin.com/in/<your-profile>
+LinkedIn: [https://linkedin.com/in/<your-profile>](https://www.linkedin.com/in/madhav-nakra-60a6b0118/)
