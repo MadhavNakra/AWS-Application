@@ -29,8 +29,6 @@ The infrastructure was designed using a custom VPC with resources distributed ac
 * S3 Storage
 * CloudTrail Logging
 
-> 📌 Insert Architecture Diagram Here
-
 ```text
 Internet
     │
@@ -61,9 +59,6 @@ A custom VPC was created to provide complete control over networking and securit
 * DNS Hostnames Enabled
 * DNS Resolution Enabled
 
-### Screenshot
-
-![VPC Configuration](screenshots/01-vpc/vpc.png)
 
 ---
 
@@ -81,9 +76,6 @@ Public and private subnets were created across multiple Availability Zones to im
 * Host internal resources
 * Isolated from direct internet access
 
-### Screenshot
-
-![Subnets](screenshots/02-subnets/subnets.png)
 
 ---
 
@@ -97,9 +89,6 @@ Internet Gateway was attached to the VPC to provide internet connectivity for re
 * Public Route Table Configuration
 * Route Propagation
 
-### Screenshot
-
-![Internet Gateway](screenshots/03-igw/igw.png)
 
 ---
 
@@ -115,9 +104,6 @@ Security Groups were configured as virtual firewalls to control inbound and outb
 | HTTP    | 80   |
 | HTTPS   | 443  |
 
-### Screenshot
-
-![Security Groups](screenshots/04-security-groups/security-groups.png)
 
 ---
 
@@ -144,9 +130,6 @@ systemctl enable httpd
 echo "<h1>Server Created by Auto Scaling</h1>" > /var/www/html/index.html
 ```
 
-### Screenshot
-
-![EC2](screenshots/05-ec2/ec2.png)
 
 ---
 
@@ -161,10 +144,6 @@ An Application Load Balancer was deployed to distribute incoming traffic across 
 * Health Checks
 * High Availability
 
-### Screenshot
-
-![ALB](screenshots/06-alb/alb.png)
-
 ---
 
 # 🎯 Target Groups & Health Checks
@@ -177,9 +156,6 @@ Target Groups were configured to route traffic to healthy EC2 instances.
 * Port: Traffic Port
 * Path: /
 
-### Screenshot
-
-![Target Group](screenshots/07-target-group/target-group.png)
 
 ---
 
@@ -201,9 +177,6 @@ An Auto Scaling Group was configured to automatically launch and terminate EC2 i
 * Self-Healing Infrastructure
 * Dynamic Resource Allocation
 
-### Screenshot
-
-![ASG](screenshots/08-asg/asg.png)
 
 ---
 
@@ -219,9 +192,6 @@ Target Tracking Scaling Policy was implemented using CPU Utilization as the scal
 | Metric       | Average CPU Utilization |
 | Target Value | 50%                     |
 
-### Screenshot
-
-![Scaling Policy](screenshots/09-scaling-policy/scaling-policy.png)
 
 ---
 
@@ -236,9 +206,6 @@ Amazon CloudWatch was used to monitor infrastructure metrics and trigger scaling
 * Instance Health
 * Auto Scaling Events
 
-### Screenshot
-
-![CloudWatch](screenshots/10-cloudwatch/cloudwatch.png)
 
 ---
 
@@ -259,9 +226,6 @@ stress-ng --cpu 2 --timeout 600s
 * Auto Scaling policies evaluated scaling requirements.
 * Additional EC2 instances were launched when thresholds were exceeded.
 
-### Screenshot
-
-![Stress Test](screenshots/11-stress-test/stress-test.png)
 
 ---
 
